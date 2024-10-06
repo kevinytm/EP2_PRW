@@ -20,7 +20,8 @@ if($filas) {
     } elseif($filas['categoria'] == 'Usuario') {
         header("Location: user.php");
     } else {
-        header("Location: login.php?error=rol_no_autorizado");
+        echo "error";
+        /* header("Location: login.php?error=rol_no_autorizado"); */
     }
 } else {
     header("Location: login.php?error=login_fallido");

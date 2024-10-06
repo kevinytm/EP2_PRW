@@ -1,5 +1,13 @@
 <?php  include 'includes/header.php'?>
 <?php  include 'Static/connect/db.php'?>
+<?php 
+    session_start(); 
+    $usuario = $_SESSION['usuario'];
+    $query = "SELECT * FROM servicios";
+    $articulos = $con->query($query);    
+    if(isset($usuario)){
+?>	
+
 
 <style>
     *{
@@ -34,6 +42,10 @@
         }
     ?>
 </table>
-
+<?php
+    }else{
+        header('Location: login.php');
+    }
+?>
 
 <?php  include 'includes/footer.php'; ?>

@@ -1,7 +1,8 @@
 <?php  include 'includes/header.php'?>
-<?php session_start(); 
-    $usuario = $_SESSION['usuario'];
-    if(isset($usuario)){
+<?php 
+
+  session_start(); 
+  
 ?>	
 
 <article class="entrada">
@@ -19,9 +20,3 @@
     </div>
       </div>
 </article>     
-
-<?php
-    }else{
-        header('Location: login.php');
-    }
-    ?>

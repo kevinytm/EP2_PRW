@@ -1,18 +1,20 @@
 <?php  include 'includes/header.php'?>
 <?php  include 'Static/connect/db.php'?>
+<?php include 'roles.php';?>
 
 <?php
-    $usuario = $_SESSION['usuario'];
-    if(isset($usuario)){
-        if(isset($_GET['id'])){
-            $id = $_GET['id'];
+    session_start();
+    $usuario = $_SESSION['usuario']; 
+    if (esAdmin($usuario)){
+        if(isset($_GET['idS'])){
+            $id = $_GET['idS'];
         }
-        $sql = "delete from servicios where id = $id;";
+        $sql = "delete from servicios where idS = $id;";
         $execute = mysqli_query($con, $sql);
         sleep(2);
         header('Location: eli_act.php');
     }else{
-        header('Location: login.php');
+        header('Location: login.php'); 
     }
 ?>
 

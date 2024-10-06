@@ -1,16 +1,16 @@
 <?php  include 'includes/header.php'?>
 <?php  include 'Static/connect/db.php'?>
+<?php include 'roles.php';?>
 
-<?php session_start(); ?>	
-	
-<?php
-    $usuario = $_SESSION['usuario'];
-    if(isset($usuario)){
+<?php   
+session_start();
+  $usuario = $_SESSION['usuario']; 
+  if (esAdmin($usuario)){ 
 ?>
 <?php
-    if(isset($_GET['id'])){
-        $id = $_GET['id'];
-        $sql = "select * from servicios where id = $id;";
+    if(isset($_GET['idS'])){
+        $id = $_GET['idS'];
+        $sql = "select * from servicios where idS = $id;";
         $execute = mysqli_query($con, $sql);
         if(mysqli_num_rows($execute)==1){
             
@@ -24,10 +24,10 @@
     }
     
     if(isset($_POST['actualizar'])){
-        $id = $_GET['id'];
+        $id = $_GET['idS'];
         $nombre = $_POST['nombre'];
         $precio = $_POST['precio'];
-        $sql = "update servicios set nombre = '$nombre', precio = '$precio' where id = $id;";
+        $sql = "update servicios set nombre = '$nombre', precio = '$precio' where idS = $id;";
         $execute = mysqli_query($con, $sql);
         if($execute){
             echo "Registro actualizado";
@@ -37,11 +37,11 @@
         header('Location: eli_act.php');
     }
     
- /*    sleep(2);
+/*     sleep(2);
     header('Location: eli_act.php'); */
 ?>
 
-<form action="actualizar.php?id=<?php echo $_GET['id'];?>" method="post">
+<form action="actualizar.php?idS=<?php echo $_GET['idS'];?>" method="post">
     <div class ="form_container">
         <label> Nombre del servicio
             <input type="text" name="nombre" id="nombre" value="<?php echo $nombre; ?>">

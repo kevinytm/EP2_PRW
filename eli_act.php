@@ -1,6 +1,6 @@
 <?php  include 'includes/header.php'?>
 <?php  include 'Static/connect/db.php'?>
-<?php session_start(); ?>	
+<?php include 'roles.php';?>
 
 <style>
     *{
@@ -8,8 +8,9 @@
     }
 </style>
 <?php
-    $usuario = $_SESSION['usuario'];
-    if(isset($usuario)){
+    session_start();
+    $usuario = $_SESSION['usuario']; 
+    if (esAdmin($usuario)){
 ?>
 <table  class="table table-bordered">
     <thead>
@@ -27,18 +28,17 @@
         while($rows = mysqli_fetch_array($exec)){
         ?>
             <tr>
-                <th><?php echo $rows['id']; ?></th>
+                <th><?php echo $rows['idS']; ?></th>
                 <th><?php echo $rows['nombre']; ?></th>
                 <th><?php echo $rows['precio']; ?></th>
-                <th><a href="eliminar.php?id=<?php echo $rows['id'];?>"><i class="bi bi-trash"></i></a></th>
-                <th><a href="actualizar.php?id=<?php echo $rows['id'];?>"><i class="bi bi-arrow-clockwise"></i></a></th>
+                <th><a href="eliminar.php?idS=<?php echo $rows['idS'];?>"><i class="bi bi-trash"></i></a></th>
+                <th><a href="actualizar.php?idS=<?php echo $rows['idS'];?>"><i class="bi bi-arrow-clockwise"></i></a></th>
             </tr>            
         <?php
         }
     ?>
 </table>
 
-<a href="index.php" color="white">Regresar </a>
 <?php
     }else{
         header('Location: login.php');

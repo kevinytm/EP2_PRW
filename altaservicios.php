@@ -1,7 +1,12 @@
 <?php  include 'includes/header.php'?>
 <?php  include 'Static/connect/db.php'?>
+<?php include 'roles.php';?>
 
-<?php session_start(); ?>	
+<?php     
+    session_start();
+    $usuario = $_SESSION['usuario']; 
+    if (esAdmin($usuario)){
+?>	
 	
 <?php
     $usuario = $_SESSION['usuario'];
@@ -16,6 +21,11 @@
     }else{
         header('Location: login.php');
     }
+?>
+<?php
+    }else{
+        header('Location: login.php');
+    }  
 ?>
 
 <?php  include 'includes/footer.php'; ?>

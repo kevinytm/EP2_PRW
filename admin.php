@@ -1,7 +1,11 @@
 <?php  include 'includes/header.php'?>
-<?php session_start(); 
-    $usuario = $_SESSION['usuario'];
-    if(isset($usuario)){
+<?php  include 'Static/connect/db.php'?>
+<?php include 'roles.php';?>
+
+<?php  
+  session_start();
+  $usuario = $_SESSION['usuario']; 
+  if (esAdmin($usuario)){
 ?>	
 
 <article class="entrada">
@@ -25,4 +29,4 @@
     }else{
         header('Location: login.php');
     }
-    ?>
+?>
