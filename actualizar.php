@@ -17,6 +17,7 @@ session_start();
             $row = mysqli_fetch_array($execute);
             $nombre = $row['nombre'];
             $precio = $row['precio'];
+            $duracion = $row['duracion'];
            
         }
     }else{
@@ -27,7 +28,8 @@ session_start();
         $id = $_GET['idS'];
         $nombre = $_POST['nombre'];
         $precio = $_POST['precio'];
-        $sql = "update servicios set nombre = '$nombre', precio = '$precio' where idS = $id;";
+        $duracion = $_POST['duracion'];
+        $sql = "update servicios set nombre = '$nombre', precio = '$precio', duracion = '$duracion' where idS = $id;";
         $execute = mysqli_query($con, $sql);
         if($execute){
             echo "Registro actualizado";
@@ -54,6 +56,13 @@ session_start();
         </label>
         <br>
     </div>
+    <div class ="form_container">
+        <label>Duración del servicio
+            <input type="text" name="duracion" id="duracion" value="<?php echo $duracion; ?>">
+        </label>
+        <br>
+    </div>
+
     <button name="actualizar" class="formulario_btn">Actualizar</button>
 </form>
 <?php

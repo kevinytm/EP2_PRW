@@ -18,6 +18,7 @@
             <th>ID</th>
             <th>Servicio</th>
             <th>Costo</th>
+            <th>Duración</th>
             <th>Eliminar</th>
             <th>Actualizar</th>
         </tr>
@@ -31,6 +32,7 @@
                 <th><?php echo $rows['idS']; ?></th>
                 <th><?php echo $rows['nombre']; ?></th>
                 <th><?php echo $rows['precio']; ?></th>
+                <th><?php echo $rows['duracion']; ?></th>
                 <th><a href="eliminar.php?idS=<?php echo $rows['idS'];?>"><i class="bi bi-trash"></i></a></th>
                 <th><a href="actualizar.php?idS=<?php echo $rows['idS'];?>"><i class="bi bi-arrow-clockwise"></i></a></th>
             </tr>            
@@ -46,4 +48,7 @@
 
 ?>
 
+<a href="admin.php"><img src="Static/img/back.png"></a>
+
 <?php  include 'includes/footer.php'; ?>
+

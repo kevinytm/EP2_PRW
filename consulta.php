@@ -12,6 +12,7 @@
             <th>ID</th>
             <th>Servicio</th>
             <th>Costo</th>
+            <th>Duración</th>
         </tr>
     </thead>
     <?php
@@ -23,6 +24,7 @@
                 <th><?php echo $rows['idS']; ?></th>
                 <th><?php echo $rows['nombre']; ?></th>
                 <th><?php echo $rows['precio']; ?></th>
+                <th><?php echo $rows['duracion']; ?></th>
             </tr>            
         <?php
         }

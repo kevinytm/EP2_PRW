@@ -46,4 +46,5 @@
         header('Location: login.php');
     }
 ?>
+
 <?php  include 'includes/footer.php'; ?>

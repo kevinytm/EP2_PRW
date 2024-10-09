@@ -2,6 +2,9 @@
 <?php 
 
   session_start(); 
+  $usuario = $_SESSION['usuario']; 
+
+  if(isset($usuario) && esUser($usuario)){
   
 ?>	
 
@@ -19,4 +22,10 @@
       </picture>
     </div>
       </div>
-</article>     
+</article>    
+
+<?php
+  }else{
+    header('Location: login.php');
+  }
+?>

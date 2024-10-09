@@ -19,4 +19,9 @@
     <button class="formulario_btn">Enviar</button>
 </form>
 
+<br>
+<br>
+
+<a href="index.php"><img src="Static/img/back.png"></a>
+
 <?php  include 'includes/footer.php'; ?>
