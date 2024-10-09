@@ -13,8 +13,9 @@
     if(isset($usuario)){
         $servicio = $_POST['nombre'];
         $precio = $_POST['precio'];
+        $duracion = $_POST['duracion'];
 
-        $sql="insert into servicios (nombre, precio) values ('$servicio', $precio);";
+        $sql="insert into servicios (nombre, precio, duracion) values ('$servicio', $precio, $duracion);";
         $execute = mysqli_query($con, $sql);
         sleep(3);
         header('Location: create.php');

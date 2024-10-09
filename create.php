@@ -14,15 +14,25 @@
       Tipo del servicio:</label>
        <input type="text" name="nombre" id="nombre" class="formulario_input">
    </div> 
-        <div class="form_container">
-         <label for="precio" class="formulario_label">
-         Costo del servicio:</label>
-         <input type="text" name="precio" id="precio" class="formulario_input"        
-         onkeypress="if((event.keyCode < 48) || (event.keyCode >57)){
-         event.returnValue=false;
-         } "  maxlength="4">
-        </div>                  
-        <BR>
+    <div class="form_container">
+        <label for="precio" class="formulario_label">
+        Costo del servicio:</label>
+        <input type="text" name="precio" id="precio" class="formulario_input"        
+        onkeypress="if((event.keyCode < 48) || (event.keyCode >57)){
+        event.returnValue=false;
+        } "  maxlength="4">
+    </div>       
+
+    <div class="form_container">
+        <label for="duracion" class="formulario_label">
+        Duración del servicio:</label>
+        <input type="text" name="duracion" id="duracion" class="formulario_input"        
+        onkeypress="if((event.keyCode < 48) || (event.keyCode >57)){
+        event.returnValue=false;
+        } "  maxlength="4">
+    </div>   
+    
+    <BR>
      <div class="form_container">                    
        <input type="button" value="Enviar Datos"  class="formulario_btn" onclick="validacion()">                    
        </div> 

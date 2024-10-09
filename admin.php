@@ -16,6 +16,8 @@
           <a href="consulta.php"> <img src="./Static/img/r.png"></a>|
           <a href="eli_act.php"><img src="./Static/img/u.gif"></a>|
           <a href="eli_act.php"><img src="./Static/img/d.png"></a>|
+          <a href="createReservacion.php"><img src="./Static/img/reservacion.svg"></a>|
+          <a href="eli_reservaciones.php"><img src="./Static/img/horario.svg"></a>|
           <a href="logout.php"><i class="bi bi-box-arrow-in-left"></i></a></p>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, rerum, reprehenderit consequatur perferendis officia, vitae fuga animi temporibus itaque atque</p>
             <picture>                      

@@ -16,5 +16,8 @@
     <button class="formulario_btn">Enviar</button> 
 </div> 
 </form> 
+
+<a href="index.php"><img src="Static/img/back.png"></a>
+
 <!-- <script src="Static/js/validaciones.js"></script>   -->
 <!-- onclick=validacion(); -->
