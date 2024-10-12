@@ -1,5 +1,6 @@
 <?php  include 'includes/header.php'?>
 <?php  include 'Static/connect/db.php'?>
+<?php include 'roles.php';?>
 <?php 
     session_start(); 
     $usuario = $_SESSION['usuario'];
